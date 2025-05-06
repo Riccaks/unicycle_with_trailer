@@ -32,31 +32,28 @@ robot follows the y-axis using a Lyapunov-based control law.
 
 The files included in this project are:
 
-- `README.md` — This documentation file.
 - `rw_init_params_unicycle.m` — MATLAB script that sets the model's initial parameters.
 - `rw_model_plot.m` — Script to generate plots and visualize simulation results.
 - `rw_unicycle_w_trailer.slx` — Simulink model of the unicycle robot with trailer.
 
 ## Kinematic Model
 
-The simulation is based on a **rear-wheel unicycle kinematic model** with a back axis length \( L_m = 0 \).
+The simulation is based on a **rear-wheel unicycle kinematic model** with back axis  $L_m = 0$:
 
 ![Kinematic Model](rear_wheeled_bicycle.png)
 
 In this model:
-- \( \lambda_1 \) represents the forward velocity of the unicycle.
-- \( \lambda_2 \) represents the angular steering velocity.
+- $\lambda_1$ represents the forward velocity of the unicycle.
+- $\lambda_2$ represents the angular steering velocity.
 
-> **NOTE:** This model is only valid when the steering angle \( \phi \neq \pm\frac{\pi}{2} \).
+> **NOTE:** This model is only valid when the steering angle $\phi \neq \pm\frac{\pi}{2}$, that is when the front axle is not perpendicular to the back axle.
 
 ## Control Objective
 
-The objective of the controller is to **make the robot follow the y-axis** with a constant velocity \( v \).
+The objective of the controller is to **make the robot follow the y-axis** with a constant velocity $v$.
 This results in the following desired values:
 
-\[
-y_{des} = \theta_{des,a} = \theta_{des,p} = 0
-\]
+$y_{des} = \theta_{des,a} = \theta_{des,p} = 0$
 
 ## Control Law
 
